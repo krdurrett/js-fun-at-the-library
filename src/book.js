@@ -5,14 +5,23 @@ function createTitle(bookIdea, sushiTitle, dragonTitle, ghostTitle) {
   return `The ${ghostTitle}`;
 };
 
-function buildMainCharacter(){
+function buildMainCharacter(name, age, pronouns){
+  var mainCharacter = {
+    name: name,
+    age: age,
+    pronouns: pronouns,
+  };
+  return mainCharacter;
+};
+
+function saveReview(){
 
 };
 
 module.exports = {
   createTitle,
   buildMainCharacter,
-  // saveReview,
+  saveReview,
   // calculatePageCount,
   // writeBook,
   // editBook
