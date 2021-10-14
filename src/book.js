@@ -1,8 +1,5 @@
-function createTitle(bookIdea, sushiTitle, dragonTitle, ghostTitle) {
-  return `The ${bookIdea}`;
-  return `The ${sushiTitle}`;
-  return `The ${dragonTitle}`;
-  return `The ${ghostTitle}`;
+function createTitle(title) {
+  return `The ${title}`;
 };
 
 function buildMainCharacter(name, age, pronouns){
@@ -23,11 +20,22 @@ function saveReview(firstReview, reviews){
   return reviews;
 };
 
+function calculatePageCount(titleOfBook){
+  var titleArray = Array.from(titleOfBook);
+  var titleCharOnly = titleArray.filter(function(char){
+    return char != null;
+  });
+  var titleLength = titleCharOnly.length;
+  var pageCount = titleLength * 20;
+  return pageCount;
+};
+
+
 module.exports = {
   createTitle,
   buildMainCharacter,
   saveReview,
-  // calculatePageCount,
+  calculatePageCount,
   // writeBook,
   // editBook
 }
