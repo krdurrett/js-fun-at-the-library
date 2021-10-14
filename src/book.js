@@ -14,8 +14,13 @@ function buildMainCharacter(name, age, pronouns){
   return mainCharacter;
 };
 
-function saveReview(){
-
+function saveReview(firstReview, reviews){
+  if (reviews.includes(firstReview)){
+    return reviews;
+  }else{
+    reviews.push(firstReview);
+  };
+  return reviews;
 };
 
 module.exports = {
