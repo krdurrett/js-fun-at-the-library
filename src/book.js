@@ -20,22 +20,31 @@ function saveReview(firstReview, reviews){
   return reviews;
 };
 
-function calculatePageCount(titleOfBook){
-  var titleArray = Array.from(titleOfBook);
-  var titleCharOnly = titleArray.filter(function(char){
-    return char != null;
-  });
-  var titleLength = titleCharOnly.length;
+function calculatePageCount(title) {
+  var titleLength = title.length;
   var pageCount = titleLength * 20;
   return pageCount;
 };
 
+function writeBook(title, character, genre){
+  var bookDescription = {
+    title: title,
+    mainCharacter: character,
+    pageCount: calculatePageCount(title),
+    genre: 'fantasy',
+  };
+  return bookDescription;
+};
+
+function editBook(book){
+  book.pageCount *= 0.75;
+};
 
 module.exports = {
   createTitle,
   buildMainCharacter,
   saveReview,
   calculatePageCount,
-  // writeBook,
-  // editBook
+  writeBook,
+  editBook
 }
