@@ -5,9 +5,18 @@ function shelfBook(book, genre){
   }
   return (sciFiShelf, book);
 };
+
+function unshelfBook(bookName, genre){
+  for (var i = 0; i < genre.length; i++) {
+    if (genre[i].title === bookName) {
+      genre.splice(i,1);
+    };
+  };
+};
+
 module.exports = {
    shelfBook,
-  // unshelfBook,
+   unshelfBook,
   // listTitles,
   // searchShelf
 };
