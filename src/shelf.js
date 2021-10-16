@@ -23,12 +23,13 @@ function listTitles(shelfTitles){
 };
 
 function searchShelf(shelfTitles, bookName){
-  for(var i = 1; i < shelfTitles.length; i--) {
-    if (bookName === shelfTitles[i].title) {
-      return true;
+  for (var i = 0; i < shelfTitles.length; i++) {
+    var titlePosition = shelfTitles[i].title;
+  }
+    if (bookName === titlePosition) {
+      return true
     } else  {
-      return false;
-    };
+      return false
   };
 };
 
