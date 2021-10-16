@@ -11,11 +11,22 @@ function createLibrary(name){
 };
 
 function addBook(library, bookName){
-  library.shelves.fantasy.push(bookName);
+  var genre = bookName.genre;
+  if (genre === 'fantasy'){
+    library.shelves.fantasy.push(bookName);
+  } else if (genre === 'fiction'){
+    library.shelves.fiction.push(bookName);
+  } else if (genre === 'nonFiction'){
+    library.shelves.nonFiction.push(bookName);
+  }
+};
+
+function checkoutBook (){
+
 };
 
 module.exports = {
   createLibrary,
   addBook,
-  // checkoutBook
+  checkoutBook
 };
