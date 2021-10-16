@@ -14,13 +14,28 @@ function unshelfBook(bookName, genre){
   };
 };
 
-function listTitles(){
-
+function listTitles(shelfTitles){
+  var titles = [];
+  for (var i = 0; i < shelfTitles.length; i++) {
+    titles.push(shelfTitles[i].title);
+  };
+  return titles.join(", ");
 };
+
+function searchShelf(shelfTitles, bookName){
+  for(var i = 1; i < shelfTitles.length; i--) {
+    if (bookName === shelfTitles[i].title) {
+      return true;
+    } else  {
+      return false;
+    };
+  };
+};
+
 
 module.exports = {
    shelfBook,
    unshelfBook,
    listTitles,
-  // searchShelf
+   searchShelf
 };
