@@ -10,8 +10,12 @@ function createLibrary(name){
   return library;
 };
 
+function addBook(library, bookName){
+  library.shelves.fantasy.push(bookName);
+};
+
 module.exports = {
   createLibrary,
-  // addBook,
+  addBook,
   // checkoutBook
 };
