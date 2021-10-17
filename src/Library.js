@@ -23,16 +23,33 @@ function addBook(library, bookName){
 
 function checkoutBook(library, bookName, shelf){
   if (shelf === 'fantasy') {
-    library.shelves.fantasy.pop();
-    return `You have now checked out ${bookName} from the ${library.name}`;
-  } else if (shelf === 'fiction') {
-    library.shelves.fiction.pop();
-    return `You have now checked out ${bookName} from the ${library.name}`;
-  } else if (shelf === 'nonFiction') {
-    library.shelves.nonFiction.pop();
-    return `You have now checked out ${bookName} from the ${library.name}`;
+    for (var i = 0; i < library.shelves.fantasy.length; i++) {
+      var bookOnShelf = library.shelves.fantasy[i].title;
+      if (bookOnShelf === bookName) {
+      library.shelves.fantasy.splice(i,1);
+      return `You have now checked out ${bookName} from the ${library.name}`;
     }
-};
+  }
+  } else if (shelf === 'fiction') {
+    for (var i = 0; i < library.shelves.fiction.length; i++) {
+      var bookOnShelf = library.shelves.fiction[i].title;
+      if (bookOnShelf === bookName) {
+      library.shelves.fiction.splice(i,1);
+      return `You have now checked out ${bookName} from the ${library.name}`;
+    }
+  }
+  } else if (shelf === 'nonFiction') {
+    for (var i = 0; i < library.shelves.nonFiction.length; i++) {
+      var bookOnShelf = library.shelves.nonFiction[i].title;
+      if (bookOnShelf === bookName) {
+      library.shelves.nonFiction.splice(i,1);
+      return `You have now checked out ${bookName} from the ${library.name}`;
+    }
+  }
+    }
+    return `Sorry, there are currently no copies of ${bookName} available at the ${library.name}`;
+  }
+
 
 module.exports = {
   createLibrary,
