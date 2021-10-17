@@ -21,8 +21,17 @@ function addBook(library, bookName){
   }
 };
 
-function checkoutBook (){
-
+function checkoutBook(library, bookName, shelf){
+  if (shelf === 'fantasy') {
+    library.shelves.fantasy.pop();
+    return `You have now checked out ${bookName} from the ${library.name}`;
+  } else if (shelf === 'fiction') {
+    library.shelves.fiction.pop();
+    return `You have now checked out ${bookName} from the ${library.name}`;
+  } else if (shelf === 'nonFiction') {
+    library.shelves.nonFiction.pop();
+    return `You have now checked out ${bookName} from the ${library.name}`;
+    }
 };
 
 module.exports = {
